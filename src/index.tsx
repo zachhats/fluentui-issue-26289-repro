@@ -1,11 +1,10 @@
+import * as FluentUIStyling from "@fluentui/react/lib/Styling";
 import * as React from 'react';
-import * as ReactDOMClient from 'react-dom/client';
-import { FluentProvider, teamsLightTheme } from '@fluentui/react-components';
+import * as ReactDOM from 'react-dom';
 
-const root = ReactDOMClient.createRoot(document.getElementById('container'));
+FluentUIStyling.loadTheme({});
 
-root.render(
-	<FluentProvider theme={teamsLightTheme}>
-		<div>Hello World</div>
-	</FluentProvider>,
+ReactDOM.render(
+	<div>Hello World</div>,
+	document.getElementById("container")
 );
