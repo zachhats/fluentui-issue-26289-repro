@@ -1,26 +1,38 @@
 {
   "compilerOptions": {
-    "target": "es2021",
-    "esModuleInterop": true,
-    "module": "commonjs",
-    "jsx": "react",
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "removeComments": false,
-    "outDir": "dist",
-    "allowUnusedLabels": false,
-    "noImplicitReturns": true,
-    "noUnusedParameters": true,
-    "pretty": true,
-    "declaration": true
+      "allowUnreachableCode": false,
+      "allowUnusedLabels": false,
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      "moduleResolution": "node",
+      "noImplicitAny": true,
+      "noImplicitOverride": true,
+      "noImplicitThis": true,
+      "noImplicitReturns": true,
+      "noUnusedLocals": true,
+      "outDir": "dist",
+      "strict": true,
+      "lib": [
+          // dom, dom.iterable, es2018, scripthost and webworker.importscripts are the default libs when targeting ES2018.
+          // We need to explictly specify them because we include es2019.array for flatMap...
+          // es2019.array does not need a polyfill and thus is safe to include since our browser/node support matrix fully support it
+          "dom",
+          "dom.iterable",
+          "es2018",
+          "es2019.array",
+          "es2019.object",
+          "scripthost",
+          "webworker.importscripts"
+      ],
+      "target": "es2018",
+      "baseUrl": "../",
+      "jsx": "react",
+      "module": "commonjs",
+      "sourceMap": true,
+      "types": []
   },
-  "lib": ["es2021", "dom"],
-  "exclude": ["node_modules"],
-  "compileOnSave": false,
-  "buildOnSave": false,
-  "ts-node": {
-    "files": true
-  }
+  "include": [
+      "./**/*",
+  ],
+  "exclude": ["node_modules"]
 }
